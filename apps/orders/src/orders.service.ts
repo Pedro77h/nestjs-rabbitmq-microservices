@@ -4,9 +4,13 @@ import { OrdersRepository } from './orders.repository';
 
 @Injectable()
 export class OrdersService {
-  constructor(private readonly orderRepository: OrdersRepository) {}
+  constructor(private readonly ordersRepository: OrdersRepository) {}
 
   async createOrder(request: CreateOrderDTO) {
-    return this.orderRepository.create(request);
+    return this.ordersRepository.create(request);
+  }
+
+  async getOrders() {
+    return this.ordersRepository.find({});
   }
 }
