@@ -14,5 +14,3 @@ export class UsersRepository extends AbstractRepository<User> {
     super(userModel, connection);
   }
 }
-
-// t
