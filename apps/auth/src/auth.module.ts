@@ -16,11 +16,11 @@ import { JwtStrategy } from './strategies/jwt.strategy';
     RmqModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      validationSchema: {
+      validationSchema: Joi.object({
         JWT_SECRET: Joi.string().required(),
         JWT_EXPIRATION: Joi.string().required(),
         MONGODB_URI: Joi.string().required(),
-      },
+      }),
       envFilePath: './apps/auth/.env',
     }),
     JwtModule.registerAsync({
